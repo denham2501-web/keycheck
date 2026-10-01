@@ -1,4 +1,4 @@
-# Plumbline — independent snagging inspections (UAE)
+# Keycheck — independent snagging inspections (UAE)
 
 Static marketing site: `index.html` (landing + pricing + WhatsApp booking form) and `sample-report.html`.
 No build step. Bookings open WhatsApp with a pre-filled message, so there's no backend.
