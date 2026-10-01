@@ -5,9 +5,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Keycheck | Snagging Inspections in Dubai &amp; Across the UAE</title>
 <meta name="description" content="Independent pre-handover snagging inspections for apartments, townhouses and villas in Dubai, Abu Dhabi and across the UAE. Fixed prices from AED 1,250. Photo report within 24 hours.">
-<link rel="canonical" href="https://keycheck.ae/">
+<link rel="canonical" href="https://denham2501-web.github.io/keycheck/">
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://keycheck.ae/">
+<meta property="og:url" content="https://denham2501-web.github.io/keycheck/">
 <meta property="og:title" content="Keycheck | Check every detail before you take the keys">
 <meta property="og:description" content="Independent snagging inspections across the UAE. Fixed prices from AED 1,250. Report within 24 hours.">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 34 34'%3E%3Crect width='34' height='34' rx='8' fill='%230b1f3a'/%3E%3Ccircle cx='12' cy='17' r='5' fill='none' stroke='%23fff' stroke-width='2.4'/%3E%3Cpath d='M17 17h5l2.5 3 4.5-6' fill='none' stroke='%231d5bff' stroke-width='2.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
@@ -20,10 +20,11 @@
   "@context": "https://schema.org",
   "@type": "HomeAndConstructionBusiness",
   "name": "Keycheck",
-  "url": "https://keycheck.ae/",
+  "url": "https://denham2501-web.github.io/keycheck/",
   "description": "Independent pre-handover snagging inspections for apartments, townhouses and villas across the UAE.",
   "areaServed": ["Dubai", "Abu Dhabi", "Sharjah", "Ajman", "Ras Al Khaimah", "Umm Al Quwain", "Fujairah", "Al Ain"],
   "priceRange": "AED 650 – AED 3,450",
+  "telephone": "+971545939189",
   "address": { "@type": "PostalAddress", "addressCountry": "AE" }
 }
 </script>
@@ -332,8 +333,8 @@
 
 <script>
   // ---- Business config: change these before launch ----
-  const WHATSAPP = "971500000000";   // international format, no + or spaces
-  const EMAIL = "hello@keycheck.ae";
+  const WHATSAPP = "971545939189";   // international format, no + or spaces
+  const EMAIL = "";                 // set once the mailbox exists, e.g. "hello@keycheck.ae"
   // -----------------------------------------------------
 
   const $ = id => document.getElementById(id);
@@ -341,8 +342,12 @@
   const GREETING = "Hi Keycheck, I'd like to book a snagging inspection.";
 
   document.querySelectorAll(".js-wa").forEach(a => { a.href = waLink(GREETING); a.target = "_blank"; a.rel = "noopener"; });
-  document.querySelectorAll(".js-email").forEach(a => a.href = `mailto:${EMAIL}`);
-  document.querySelectorAll(".js-email-text").forEach(el => el.textContent = EMAIL);
+  if (EMAIL) {
+    document.querySelectorAll(".js-email").forEach(a => a.href = `mailto:${EMAIL}`);
+    document.querySelectorAll(".js-email-text").forEach(el => el.textContent = EMAIL);
+  } else {
+    document.querySelectorAll(".js-email").forEach(a => (a.closest("li") || a).remove());
+  }
   $("yr").textContent = new Date().getFullYear();
 
   // ---- Floor plan defect pins ----
